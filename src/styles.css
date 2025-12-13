@@ -4,6 +4,10 @@
 @import "tailwindcss";
 @import "tailwindcss/theme";
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Configuración de dark mode para Tailwind CSS v4 */
 @custom-variant dark (&:where(.dark, .dark *));
 
