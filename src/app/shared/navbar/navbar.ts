@@ -23,6 +23,10 @@ export class Navbar {
     this.isMobileMenuOpen.update(value => !value);
   }
 
+  closeMobileMenu() {
+    this.isMobileMenuOpen.set(false);
+  }
+
   toggleTheme() {
     this.themeService.toggleDarkMode();
   }

@@ -81,23 +81,23 @@
     [class.hidden]="!isMobileMenuOpen()">
     <div class="mx-auto max-w-7xl px-4 py-4">
       <nav class="flex flex-col space-y-4 text-center">
-        <a href="#about"
+        <a href="#about" (click)="closeMobileMenu()"
           class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group">
           {{ 'nav.about' | t }}
         </a>
-        <a href="#skills"
+        <a href="#skills" (click)="closeMobileMenu()"
           class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group">
           {{ 'nav.skills' | t }}
         </a>
-        <a href="#projects"
+        <a href="#projects" (click)="closeMobileMenu()"
           class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group">
           {{ 'nav.projects' | t }}
         </a>
-        <a href="#certifications"
+        <a href="#certifications" (click)="closeMobileMenu()"
           class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group">
           {{ 'nav.certifications' | t }}
         </a>
-        <a href="#contact"
+        <a href="#contact" (click)="closeMobileMenu()"
           class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group">
           {{ 'nav.contact' | t }}
         </a>

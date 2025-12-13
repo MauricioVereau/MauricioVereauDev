@@ -24,27 +24,14 @@
   <meta property="og:url" content="https://mauriciovereau.dev">
   <meta property="og:site_name" content="Mauricio Vereau">
   <meta property="og:image" content="assets/img/mv-dev.png">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <script>
-    // Aplicar tema antes de que Angular se monte para evitar parpadeo
-    (function () {
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme === 'dark') {
-        document.documentElement.classList.add('dark');
-      } else if (!savedTheme) {
-        // Si no hay tema guardado, usar preferencia del sistema
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          document.documentElement.classList.add('dark');
-        }
-      }
-    })();
-  </script>
+  <link rel="icon" type="image/x-icon" href="assets/img/mv-dev.png">
 </head>
 
 <body>
   <app-root></app-root>
 
   <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </body>
 
 </html>

@@ -29,7 +29,7 @@
               </svg>
             </div>
             <span class="text-sm md:text-base text-foreground font-medium">
-              Lima, Perú
+              Trujillo, Perú
             </span>
           </div>
 
@@ -45,7 +45,7 @@
             </div>
             <a href="mailto:mauricio@vereau.dev"
               class="text-sm md:text-base text-foreground font-medium break-all md:break-normal underline-offset-4 hover:underline">
-              mauricio@vereau.dev
+              mauriciovereau@gmail.com
             </a>
           </div>
 
@@ -61,7 +61,7 @@
               </svg>
             </div>
             <span class="text-sm md:text-base text-foreground font-medium">
-              +51 999 888 777
+              +51 912 800 899
             </span>
           </div>
         </div>
@@ -77,66 +77,14 @@
             class="font-mono text-sm text-muted-foreground"><code><span class="text-primary">$</span> npx contact-mauricio
 <span class="text-green-400">✓</span> Connecting...
 <span class="text-green-400">✓</span> Ready to collaborate!
-<span class="text-primary">&gt;</span><span class="inline-block w-2 h-4 bg-primary ml-1 animate-pulse"></span></code></pre>
+<span class="text-primary">&gt;</span><span class="inline-block w-2 h-4 bg-primary ml-1 animate-pulse"></span>
+</code>
+</pre>
         </div>
       </div>
 
       <!-- Columna derecha: formulario -->
-      <form class="space-y-4 md:space-y-5 bg-card border border-border rounded-2xl p-6 md:p-8">
-        <div>
-          <label class="text-sm font-medium text-foreground mb-1.5 block">
-            {{ 'contact.form.name' | t }}
-          </label>
-          <input type="text" class="flex h-10 w-full rounded-lg border px-3 py-2 text-sm md:text-base
-                     bg-card border-border
-                     placeholder:text-muted-foreground
-                     focus-visible:outline-none focus-visible:ring-2
-                     focus-visible:ring-primary/60 focus-visible:ring-offset-2
-                     focus-visible:ring-offset-background" required placeholder="John Doe" />
-        </div>
-
-        <div>
-          <label class="text-sm font-medium text-foreground mb-1.5 block">
-            {{ 'contact.form.email' | t }}
-          </label>
-          <input type="email" class="flex h-10 w-full rounded-lg border px-3 py-2 text-sm md:text-base
-                     bg-card border-border
-                     placeholder:text-muted-foreground
-                     focus-visible:outline-none focus-visible:ring-2
-                     focus-visible:ring-primary/60 focus-visible:ring-offset-2
-                     focus-visible:ring-offset-background" required placeholder="john@example.com" />
-        </div>
-
-        <div>
-          <label class="text-sm font-medium text-foreground mb-1.5 block">
-            {{ 'contact.form.message' | t }}
-          </label>
-          <textarea rows="2" class="flex min-h-12 w-full rounded-lg border px-3 py-2 text-sm md:text-base
-                     bg-card border-border
-                     placeholder:text-muted-foreground
-                     focus-visible:outline-none focus-visible:ring-2
-                     focus-visible:ring-primary/60 focus-visible:ring-offset-2
-                     focus-visible:ring-offset-background
-                     resize-y" required placeholder="Cuéntame sobre tu proyecto..."></textarea>
-        </div>
-
-        <button type="submit" class="inline-flex items-center justify-center gap-2 w-full h-11 md:h-12 rounded-lg px-4 md:px-8
-                   bg-primary text-primary-foreground font-semibold text-sm md:text-base
-                   transition-colors hover:bg-primary/90
-                   focus-visible:outline-none focus-visible:ring-2
-                   focus-visible:ring-primary/70 focus-visible:ring-offset-2
-                   focus-visible:ring-offset-background">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="h-4 w-4 md:h-5 md:w-5">
-            <path
-              d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z">
-            </path>
-            <path d="m21.854 2.147-10.94 10.939"></path>
-          </svg>
-          <span>{{ 'contact.form.submit' | t }}</span>
-        </button>
-      </form>
+      <form-message/>
     </div>
   </div>
 </div>

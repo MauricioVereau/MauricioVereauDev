@@ -6,22 +6,18 @@
   "nav.projects": "Projects",
   "nav.certifications": "Certifications",
   "nav.contact": "Contact",
-
   "hero.badge.hello": "Hello, I am",
   "hero.desc": "I develop robust and scalable solutions by applying best practices, modern architecture, and high-quality standards. Specialized in Angular, .NET, and cloud platforms.",
   "hero.cta.projects": "View Projects",
   "hero.cta.downloadCv": "Download CV",
-
   "about.title": "About me",
   "about.desc": "I am a passionate software developer with experience in building web applications and enterprise solutions. I specialize in Angular for the frontend and .NET for the backend, and I have a strong interest in cloud technologies such as Azure and AWS. I strive to write clean, efficient, and maintainable code, and I am always looking to learn new technologies and improve my skills.",
   "about.subtitle": "// Companies I have worked for",
   "about.years.experience": "Years of Experience",
   "about.projects.completed": "Completed Projects",
   "about.tech.pull": "Technologies mastered",
-
   "skills.title": "Skills",
   "skills.subtitle": "Technologies and tools I handle",
-
   "projects.title": "Projects",
   "projects.subtitle": "A selection of my recent works",
   "projects.project1.desc": "Website redesign for Hoteles Italia, focused on UX and performance.",
@@ -29,7 +25,6 @@
   "projects.project3.desc": "HTML, CSS, and JavaScript website for a real estate company.",
   "projects.project4.desc": "E-commerce API built with .NET 8, Docker and Sql Server.",
   "projects.project5.desc": "Backend application using Clean Architecture with .NET 8 and Docker.",
-
   "cert.pretitle": "Verified Credentials",
   "cert.title": "Certifications",
   "cert.subtitle": "Professional certifications that validate my experience and knowledge",
@@ -39,12 +34,21 @@
   "cert.cert4.title": "Python Fundamentals",
   "cert.cert5.title": "Introduction to Cybersecurity",
   "cert.cert6.title": "Technical Professional in Computing and Informatics",
-
   "contact.title": "Contact",
   "contact.subtitle": "Got a project in mind or just want to say hi? Feel free to reach out!",
   "contact.form.name": "Name",
   "contact.form.email": "E-mail",
+  "contact.form.phone": "Phone",
   "contact.form.message": "Message",
-  "contact.form.submit": "Send Message"
-
+  "contact.form.submit": "Send Message",
+  "contact.form.required": "This field is required",
+  "contact.form.minLength": "Must be at least 10 characters",
+  "contact.form.invalidPattern": "Invalid phone number",
+  "contact.form.invalidEmail": "Please enter a valid email address",
+  "contact.form.success": "Your message has been sent successfully!",
+  "contact.form.error": "There was an error sending your message. Please try again later.",
+  "footer.rights": "All rights reserved",
+  "error.title": "Page not found",
+  "error.desc": "Sorry, we couldn't find the page you're looking for. It might have been moved or doesn't exist.",
+  "error.btn": "Return to Home"
 }
