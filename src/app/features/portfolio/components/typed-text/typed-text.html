@@ -1,0 +1,9 @@
+<div class="inline-flex items-baseline min-w-[220px]">
+    <span class="text-primary text-xs sm:text-sm">&gt;</span>
+    <p class="truncate text-xs sm:text-sm ml-1">
+        {{ typedText() || ' ' }}
+        <span class="inline-block h-[1em] w-0.5 bg-primary ml-0.5 align-middle" [class.opacity-100]="showCursor()"
+            [class.opacity-0]="!showCursor()">
+        </span>
+    </p>
+</div>

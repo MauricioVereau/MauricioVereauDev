@@ -1,1 +1,234 @@
+
+
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@import "tailwindcss/theme";
+
+/* Configuración de dark mode para Tailwind CSS v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Configuración de colores personalizados para Tailwind CSS v4 */
+@theme {
+  /* Colores base */
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-glow: hsl(var(--glow));
+
+  /* Primary con variantes */
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  /* Secondary con variantes */
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  /* Destructive con variantes */
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  /* Muted con variantes */
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  /* Accent con variantes */
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  /* Popover con variantes */
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  /* Card con variantes */
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  /* Surface con variantes */
+  --color-surface: hsl(var(--surface));
+  --color-surface-elevated: hsl(var(--surface-elevated));
+
+  /* Sidebar con variantes */
+  --color-sidebar: hsl(var(--sidebar-background));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+}
+
+@layer base {
+    :root {
+      --background: 220 20% 97%;
+      --foreground: 220 25% 10%;
+      --card: 0 0% 100%;
+      --card-foreground: 220 25% 10%;
+      --popover: 0 0% 100%;
+      --popover-foreground: 220 25% 10%;
+      --primary: 187 85% 43%;
+      --primary-foreground: 220 25% 5%;
+      --secondary: 220 15% 92%;
+      --secondary-foreground: 220 25% 15%;
+      --muted: 220 15% 92%;
+      --muted-foreground: 220 10% 45%;
+      --accent: 187 85% 43%;
+      --accent-foreground: 220 25% 5%;
+      --destructive: 0 84% 60%;
+      --destructive-foreground: 0 0% 100%;
+      --border: 220 15% 88%;
+      --input: 220 15% 88%;
+      --ring: 187 85% 43%;
+      --glow: 187 85% 50%;
+      --surface: 220 20% 95%;
+      --surface-elevated: 0 0% 100%;
+      --sidebar-background: 0 0% 98%;
+      --sidebar-foreground: 240 5.3% 26.1%;
+      --sidebar-primary: 240 5.9% 10%;
+      --sidebar-primary-foreground: 0 0% 98%;
+      --sidebar-accent: 240 4.8% 95.9%;
+      --sidebar-accent-foreground: 240 5.9% 10%;
+      --sidebar-border: 220 13% 91%;
+      --sidebar-ring: 217.2 91.2% 59.8%;
+    }
+
+    .dark {
+      --background: 222 30% 8%;
+      --foreground: 210 40% 96%;
+      --card: 222 30% 12%;
+      --card-foreground: 210 40% 96%;
+      --popover: 222 30% 12%;
+      --popover-foreground: 210 40% 96%;
+      --primary: 187 85% 53%;
+      --primary-foreground: 222 30% 8%;
+      --secondary: 222 25% 18%;
+      --secondary-foreground: 210 40% 96%;
+      --muted: 222 25% 18%;
+      --muted-foreground: 215 20% 60%;
+      --accent: 187 85% 53%;
+      --accent-foreground: 222 30% 8%;
+      --destructive: 0 62% 50%;
+      --destructive-foreground: 210 40% 98%;
+      --border: 222 25% 20%;
+      --input: 222 25% 20%;
+      --ring: 187 85% 53%;
+      --glow: 187 85% 60%;
+      --surface: 222 30% 10%;
+      --surface-elevated: 222 30% 14%;
+      --sidebar-background: 240 5.9% 10%;
+      --sidebar-foreground: 240 4.8% 95.9%;
+      --sidebar-primary: 224.3 76.3% 48%;
+      --sidebar-primary-foreground: 0 0% 100%;
+      --sidebar-accent: 240 3.7% 15.9%;
+      --sidebar-accent-foreground: 240 4.8% 95.9%;
+      --sidebar-border: 240 3.7% 15.9%;
+      --sidebar-ring: 217.2 91.2% 59.8%;
+    }
+  }
+
+@layer utilities {
+  .tech-glow {
+    fill: none;
+  }
+
+  /* Lenguajes de programación */
+  .glow-javascript { filter: drop-shadow(0 0 8px #F7DF1E); }
+  .glow-csharp { filter: drop-shadow(0 0 8px #68217A); }
+  .glow-java { filter: drop-shadow(0 0 8px #007396); }
+  .glow-python { filter: drop-shadow(0 0 8px #306998); }
+  .glow-html5 { filter: drop-shadow(0 0 8px #E44D26); }
+  .glow-css3 { filter: drop-shadow(0 0 8px #1572B6); }
+  .glow-typescript { filter: drop-shadow(0 0 8px #3178C6); }
+
+  /* Frameworks y librerías */
+  .glow-angular { filter: drop-shadow(0 0 8px #DD1B16); }
+  .glow-spring { filter: drop-shadow(0 0 8px #7eca4c); }
+  .glow-bootstrap { filter: drop-shadow(0 0 8px #563D7C); }
+  .glow-tailwind { filter: drop-shadow(0 0 8px #38BDF8); }
+  .glow-swagger { filter: drop-shadow(0 0 8px #85B1BF); }
+  .glow-dotnetcore { filter: drop-shadow(0 0 8px #512BD4); }
+
+  /* Bases de datos */
+  .glow-mysql { filter: drop-shadow(0 0 8px #00758F); }
+  .glow-mongodb { filter: drop-shadow(0 0 8px #69a143); }
+  .glow-sqlserver { filter: drop-shadow(0 0 8px #CC2927); }
+
+  /* IDEs */
+  .glow-pycharm { filter: drop-shadow(0 0 8px #A91B6B); }
+  .glow-visualstudio { filter: drop-shadow(0 0 8px #5C2D91); }
+
+  .glow-eclipse { filter:drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));}
+
+  .glow-eclipse:hover { filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));}
+
+  /* Herramientas */
+  .glow-git { filter: drop-shadow(0 0 8px #F05032); }
+  .glow-maven { filter: drop-shadow(0 0 8px #C71B23); }
+  .glow-postman { filter: drop-shadow(0 0 8px #FF6C37); }
+  .glow-linux { filter: drop-shadow(0 0 8px #F7DF1E); }
+  .glow-jira { filter: drop-shadow(0 0 8px #0052CC); }
+  .glow-cloudflare { filter: drop-shadow(0 0 8px #F38020); }
+  .glow-azure { filter: drop-shadow(0 0 8px #007ACC); }
+  .glow-docker { filter: drop-shadow(0 0 8px #2496ED); }
+}
+
+/* Animación de fade-in-up */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+
+  /* Delays reutilizables */
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
+}
+
+/* Animaciones para efectos flotantes del hero */
+@keyframes float {
+  0%, 100% {
+    transform: translate(-50%, -50%) translateY(0px) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-20px) scale(1.05);
+  }
+}
+
+@keyframes float-delayed {
+  0%, 100% {
+    transform: translate(50%, 50%) translateY(0px) scale(1);
+  }
+  50% {
+    transform: translate(50%, 50%) translateY(-20px) scale(1.05);
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float-delayed 8s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+}

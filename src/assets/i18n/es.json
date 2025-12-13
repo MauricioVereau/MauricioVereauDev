@@ -1,0 +1,54 @@
+{
+  "lang.code": "ES",
+  "lang.button.aria": "Cambiar idioma",
+  "nav.about": "Sobre mí",
+  "nav.skills": "Habilidades",
+  "nav.projects": "Proyectos",
+  "nav.certifications": "Certificaciones",
+  "nav.contact": "Contacto",
+
+  "hero.badge.hello": "Hola, soy",
+  "hero.desc": "Desarrollo soluciones robustas y escalables aplicando buenas prácticas, arquitectura moderna y estándares de alta calidad. Especializado en Angular, .NET y plataformas cloud.",
+  "hero.cta.projects": "Ver Proyectos",
+  "hero.cta.downloadCv": "Descargar CV",
+
+  "about.title": "Sobre mí",
+  "about.desc": "Soy un desarrollador de software apasionado con experiencia en la creación de aplicaciones web y soluciones empresariales. Me especializo en Angular para el frontend y .NET para el backend, y tengo un fuerte interés en las tecnologías cloud como Azure y AWS. Me esfuerzo por escribir código limpio, eficiente y mantenible, y siempre estoy buscando aprender nuevas tecnologías y mejorar mis habilidades.",
+  "about.subtitle": "// Empresas donde he trabajado",
+  "about.years.experience": "Años de Experiencia",
+  "about.projects.completed": "Proyectos Completados",
+  "about.tech.pull": "Tecnologías Dominadas",
+
+  "skills.title": "Habilidades",
+  "skills.subtitle": "Tecnologías y herramientas que manejo",
+
+  "projects.title": "Proyectos",
+  "projects.subtitle": "Una selección de mis trabajos recientes",
+
+  "projects.project1.desc": "Rediseño del sitio web de Hoteles Italia, enfocado en UX y rendimiento.",
+  "projects.project2.desc": "Aplicación en Angular que consume la API RestCountries para listar y buscar países.",
+  "projects.project3.desc": "Sitio web en HTML, CSS y JavaScript para una empresa de bienes raíces.",
+
+  "projects.project4.desc": "API de e-commerce desarrollada en .NET 8, Docker y Sql Server.",
+  "projects.project5.desc": "Aplicación backend con arquitectura limpia en .NET 8 y Docker.",
+
+  "cert.pretitle": "Credenciales Verificadas",
+  "cert.title": "Certificaciones",
+  "cert.subtitle": "Certificaciones profesionales que validan mi experiencia y conocimientos",
+  "cert.cert1.title": ".NET Backend: .NET Core, SQL Server y Seguridad JWT",
+  "cert.cert2.title": "Certificación en Fundamentos de Scrum",
+  "cert.cert3.title": "Computación en la Nube",
+  "cert.cert4.title": "Fundamentos de Python",
+  "cert.cert5.title": "Introducción a la Ciberseguridad",
+  "cert.cert6.title": "Profesional Técnico en Computación e Informática",
+
+
+  "contact.title": "Contacto",
+  "contact.subtitle": "¿Tienes un proyecto en mente o solo quieres saludar? ¡No dudes en contactarme!",
+  "contact.form.name": "Nombre",
+  "contact.form.email": "Correo Electrónico",
+  "contact.form.message": "Mensaje",
+  "contact.form.submit": "Enviar Mensaje"
+
+
+}

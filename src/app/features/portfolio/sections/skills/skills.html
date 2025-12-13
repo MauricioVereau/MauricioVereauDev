@@ -1,0 +1,32 @@
+<div class="container min-h-screen flex items-center justify-center mx-auto px-4">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center py-4">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4"><span class="text-primary">{{ 'skills.title' | t }}</span></h2>
+      <p class="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">{{ 'skills.subtitle' | t }}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 rounded-xl bg-background/90 px-4 py-12">
+      @for (category of techData; track category.id) {
+      <tech-category [data]="category" />
+      }
+    </div>
+    <!-- Badges globales de tecnologías -->
+    <div class="flex flex-wrap justify-center gap-3 sm:gap-4 lg:gap-6 px-2 sm:px-4 py-8">
+      @for (category of techData; track category.id) {
+        @for (item of category.items; track item.name) {
+        <span class="tech-glow
+                inline-flex items-center justify-center
+                px-3 py-1.5 sm:px-4 sm:py-2
+                rounded-full
+                text-xs sm:text-sm font-mono
+                text-foreground bg-secondary border border-primary
+                whitespace-nowrap">
+          {{ item.name }}
+        </span>
+        }
+      }
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,107 @@
+<nav class="fixed top-0 left-0 right-0 z-50 bg-background/95">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="font-mono text-xl font-bold text-primary transition-colors hover:text-primary/80">
+        &lt;MV /&gt;
+      </a>
+
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#about"
+          class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group">
+          {{ 'nav.about' | t }}
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+        </a>
+        <a href="#skills"
+          class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group">
+          {{ 'nav.skills' | t }}
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+        </a>
+        <a href="#projects"
+          class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group">
+          {{ 'nav.projects' | t }}
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+        </a>
+        <a href="#certifications"
+          class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group">
+          {{ 'nav.certifications' | t }}
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+        </a>
+        <a href="#contact"
+          class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group">
+          {{ 'nav.contact' | t }}
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+        </a>
+      </div>
+
+      <!-- Right side actions -->
+      <div class="flex items-center gap-4">
+        <!-- Language selector -->
+        <button type="button" class="flex items-center
+             gap-1.5 rounded-full p-2 text-muted-foreground
+             transition-colors hover:bg-surface
+             hover:text-foreground focus-visible:outline-2
+             focus-visible:outline-offset-2
+             focus-visible:outline-primary" [attr.aria-label]="'lang.button.aria' | t" (click)="toggle()">
+          <i class="ri-global-line"></i>
+          <span class="text-sm font-medium">
+            {{ ts.langLabel() }}
+          </span>
+        </button>
+
+        <!-- Theme toggle -->
+        <button type="button" (click)="toggleTheme()" class="flex items-center justify-center rounded-full p-2
+          text-muted-foreground transition-colors hover:bg-surface
+          hover:text-foreground focus-visible:outline-2
+          focus-visible:outline-offset-2 focus-visible:outline-primary"
+          [attr.aria-label]="isDarkMode() ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro'">
+          <i class="ri-sun-line" [class.hidden]="isDarkMode()"></i>
+          <i class="ri-moon-line" [class.hidden]="!isDarkMode()"></i>
+        </button>
+
+        <!-- Mobile menu button -->
+        <button type="button" (click)="toggleMobileMenu()" [attr.aria-expanded]="isMobileMenuOpen()"
+          class="rounded-md p-2 text-muted-foreground transition-colors hover:bg-surface hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:hidden"
+          aria-label="Menú de navegación">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-6 w-6"
+            [class.hidden]="isMobileMenuOpen()">
+            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-6 w-6"
+            [class.hidden]="!isMobileMenuOpen()">
+            <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu overlay -->
+  <div class="absolute inset-x-0 top-16 border-b border-border/40 bg-background/95 backdrop-blur-sm sm:hidden"
+    [class.hidden]="!isMobileMenuOpen()">
+    <div class="mx-auto max-w-7xl px-4 py-4">
+      <nav class="flex flex-col space-y-4 text-center">
+        <a href="#about"
+          class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group">
+          {{ 'nav.about' | t }}
+        </a>
+        <a href="#skills"
+          class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group">
+          {{ 'nav.skills' | t }}
+        </a>
+        <a href="#projects"
+          class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group">
+          {{ 'nav.projects' | t }}
+        </a>
+        <a href="#certifications"
+          class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group">
+          {{ 'nav.certifications' | t }}
+        </a>
+        <a href="#contact"
+          class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group">
+          {{ 'nav.contact' | t }}
+        </a>
+      </nav>
+    </div>
+  </div>
+</nav>
