@@ -1,11 +1,11 @@
 import { Component, inject, signal, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { Subject } from 'rxjs';
 
 import { TranslatePipe } from '../../../../core/pipe/TranslatePipe.pipe';
 import { SendEmailService } from '../../../../core/services/send-message.service';
 import { Message } from '../../../../core/models/message';
 import { TurnstileContainer } from "../turnstile-container/turnstile-container";
+import { delay } from 'rxjs';
 
 declare global {
   interface Window {
@@ -21,10 +21,8 @@ declare global {
 })
 export class FormMessage {
 
-  @ViewChild(TurnstileContainer) turnstileComp!: TurnstileContainer;
-
-  private fb = inject(FormBuilder);
-  private sendEmailService = inject(SendEmailService);
+  fb = inject(FormBuilder);
+  sendEmailService = inject(SendEmailService);
 
   turnstileToken = signal<string | null>(null);
   showTurnstile = signal<boolean>(false);
@@ -37,9 +35,9 @@ export class FormMessage {
   });
 
   // UI state
-  isSubmitting = false;
-  isSubmitted = false;
-  hasError = false;
+  isSubmitting = signal<boolean>(false);
+  isSubmitted = signal<boolean>(false);
+  hasError = signal<boolean>(false);
 
   // ===============================
   // Submit
@@ -47,43 +45,37 @@ export class FormMessage {
   submit(): void {
     this.markAllAsTouched();
 
-    if (this.contactForm.invalid || this.isSubmitting) return;
+    if (this.contactForm.invalid || this.isSubmitting()) return;
 
     // Show Turnstile to get the token
     this.showTurnstile.set(true);
   }
 
   private sendForm(payload: Message): void {
-    this.isSubmitting = true;
-    this.hasError = false;
-    this.isSubmitted = false;
+    this.isSubmitting.set(true);
+    this.hasError.set(false);
+    this.isSubmitted.set(false);
 
     this.sendEmailService.sendMessageWeb(payload)
+      .pipe(
+        delay(2000)
+      )
       .subscribe({
-        next: () => {
-          this.isSubmitting = false;
-          this.isSubmitted = true;
+        next: (resp) => {
+          console.log('SendEmailService OK', resp);
+          this.isSubmitted.set(true);
+          this.isSubmitting.set(false);      // <- mover aquí
+          this.showTurnstile.set(false);
+          this.turnstileToken.set(null);
           this.resetFormFull();
-          // Hide Turnstile and clear token
-          this.showTurnstile.set(false);
-          this.turnstileToken.set(null);
-
-          // Hide success message after delay
-          setTimeout(() => {
-            this.isSubmitted = false;
-          }, 2000);
         },
-        error: () => {
-          this.isSubmitting = false;
-          this.hasError = true;
-          // Hide Turnstile to allow retry if needed, or keep it? 
-          // If we hide it, they have to click submit again to generate a new token.
+        error: (err) => {
+          console.error('SendEmailService ERROR', err);
+          this.hasError.set(true);
+          this.isSubmitting.set(false);      // <- y aquí en error
           this.showTurnstile.set(false);
           this.turnstileToken.set(null);
-
-          setTimeout(() => {
-            this.hasError = false;
-          }, 3000);
+          this.resetFormFull();
         },
       });
   }

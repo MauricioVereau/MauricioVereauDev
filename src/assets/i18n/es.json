@@ -51,6 +51,8 @@
   "contact.form.minLength": "Mínimo 10 carácteres",
   "contact.form.invalidPattern": "Formato de teléfono incorrecto",
   "contact.form.invalidEmail": "Por favor, ingresa un correo electrónico válido",
+  "contact.form.turnstileValidating": "Verificando que eres una persona real y asegurando el envío de tu mensaje...",
+  "contact.form.turnstileInfo":"Este paso nos ayuda a proteger el formulario contra envíos automáticos y spam.",
   "contact.form.success": "¡Tu mensaje ha sido enviado con éxito!",
   "contact.form.error": "Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.",
 

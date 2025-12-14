@@ -1,8 +1,9 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, inject, NgZone, OnInit, signal, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'typed-text',
-  templateUrl: './typed-text.html'
+  templateUrl: './typed-text.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TypedText implements OnInit {
 
@@ -32,9 +33,14 @@ export class TypedText implements OnInit {
   pauseDuration = 1500;
   cursorBlinkSpeed = 500;
 
+  private ngZone = inject(NgZone);// posible innecesario
+  private cdr = inject(ChangeDetectorRef); // posible innecesario
+
   ngOnInit(): void {
-    this.startTypingLoop();
-    this.startCursorBlink();
+    this.ngZone.runOutsideAngular(() => {
+      this.startTypingLoop();
+      this.startCursorBlink();
+    });
   }
 
 
@@ -57,11 +63,13 @@ export class TypedText implements OnInit {
         // Escribiendo
         this.typedText.set(fullText.substring(0, charIndex));
         this.currentCharIndex.set(charIndex + 1);
+        this.cdr.detectChanges(); // Local update only // posible innecesario
 
         // Pausa al final del texto
         if (charIndex === fullText.length) {
           this.typingTimeoutId = window.setTimeout(() => {
             this.isDeleting.set(true);
+            this.cdr.detectChanges(); // posible innecesario
             loop();
           }, this.pauseDuration);
           return;
@@ -70,15 +78,19 @@ export class TypedText implements OnInit {
         // Borrando
         this.typedText.set(fullText.substring(0, charIndex));
         this.currentCharIndex.set(charIndex - 1);
+       // this.cdr.detectChanges(); // posible innecesario
 
         // Cuando termina de borrar, pasar al siguiente texto
         if (charIndex === 0) {
           this.isDeleting.set(false);
           this.currentTextIndex.set((currentIndex + 1) % texts.length);
 
+         // this.cdr.detectChanges(); // posible innecesario
+
           // Pausa breve antes de empezar a escribir el siguiente
           this.typingTimeoutId = window.setTimeout(() => {
             this.currentCharIndex.set(0);
+           // this.cdr.detectChanges(); // posible innecesario
             loop();
           }, 300);
           return;
@@ -96,6 +108,7 @@ export class TypedText implements OnInit {
     this.cursorIntervalId = window.setInterval(() => {
       if (this.isTypingPaused()) {
         this.showCursor.set(true);
+        this.cdr.detectChanges(); // posible innecesario
         return;
       }
 
@@ -105,6 +118,7 @@ export class TypedText implements OnInit {
       } else {
         this.showCursor.update((prev) => !prev);
       }
+      this.cdr.detectChanges(); // posible innecesario
     }, this.cursorBlinkSpeed);
   }
 
@@ -113,12 +127,15 @@ export class TypedText implements OnInit {
     this.typedText.set('');
     this.currentCharIndex.set(0);
     this.isDeleting.set(false);
+    this.cdr.detectChanges(); // posible innecesario
 
     if (this.typingTimeoutId !== null) {
       clearTimeout(this.typingTimeoutId);
     }
 
-    this.startTypingLoop();
+    this.ngZone.runOutsideAngular(() => {
+      this.startTypingLoop();
+    });
   }
 
   pauseTyping(): void {

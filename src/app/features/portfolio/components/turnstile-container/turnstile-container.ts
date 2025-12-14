@@ -1,6 +1,6 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, inject, OnDestroy, output, signal } from '@angular/core';
-import { env } from '../../../../../env/env';
+import { AfterViewInit, ChangeDetectionStrategy, Component, inject, output, signal } from '@angular/core';
 import { ThemeService } from '../../../../core/services/theme.service';
+import { env } from '../../../../../env/env';
 
 declare const turnstile: {
   render: (container: string | HTMLElement, options: {
@@ -13,7 +13,6 @@ declare const turnstile: {
   reset: (widgetId: string) => void;
   remove: (widgetId: string) => void;
 };
-
 @Component({
   selector: 'turnstile-container',
   imports: [],
@@ -25,31 +24,28 @@ declare const turnstile: {
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TurnstileContainer implements AfterViewInit, OnDestroy {
+export class TurnstileContainer implements AfterViewInit {
   private widgetId!: string;
 
   private themeService = inject(ThemeService);
-  isDarkMode = this.themeService.isDarkMode;
+  isDarkMode = this.themeService.isDarkMode();
 
   readonly token = signal<string>('');
   tokenGenerated = output<string>();
 
   ngAfterViewInit(): void {
-    // Ensure we don't render if already rendered (safety check)
-    if (this.widgetId) return;
-
     this.widgetId = turnstile.render('#turnstile', {
-      sitekey: '0x4AAAAAABiXIlAgVL2xQnjE',
-      theme: this.isDarkMode() ? 'dark' : 'light',
+      //sitekey: '0x4AAAAAABiXIlAgVL2xQnjE',
+      sitekey: env.siteKey,
+      theme: this.isDarkMode ? 'dark' : 'light',
       callback: (token: string) => {
-        this.token.set(token);
-        this.tokenGenerated.emit(token);
-      }
+        // Run outside current CD cycle to prevent NG0100
+        setTimeout(() => {
+          this.token.set(token);
+          this.tokenGenerated.emit(token);
+        });
+      },
     });
-  }
-
-  ngOnDestroy(): void {
-    this.remove();
   }
 
   getToken(): string {
@@ -61,17 +57,12 @@ export class TurnstileContainer implements AfterViewInit, OnDestroy {
   }
 
   reset(): void {
-    if (this.widgetId) {
-      turnstile.reset(this.widgetId);
-    }
+    turnstile.reset(this.widgetId);
     this.token.set('');
   }
 
   remove(): void {
-    if (this.widgetId) {
-      turnstile.remove(this.widgetId);
-      this.widgetId = undefined as any;
-    }
+    turnstile.remove(this.widgetId);
     this.token.set('');
   }
 

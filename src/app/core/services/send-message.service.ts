@@ -8,7 +8,7 @@ import { env } from '../../../env/env';
 })
 export class SendEmailService {
 
-  private apiUrl = 'https://send-email.mauricio-vereau.workers.dev/';
+  private apiUrl = env.workerUrl;
 
   http = inject(HttpClient);
 
