@@ -79,27 +79,29 @@
     </p>
     }
   </div>
-
-  <!-- Turnstile -->
-  @if (showTurnstile) {
-  <div id="turnstile-container" class="mb-4 min-h-[65px] flex justify-center"></div>
-  }
-
-  <!-- Mensaje error turnstile -->
-  @if (turnstileError) {
-  <p class="mb-4 text-xs text-red-400 text-center">
-    Error loading security check. Please try again.
-  </p>
+  @if (showTurnstile()) {
+  <turnstile-container (tokenGenerated)="onTokenGenerated($event)" />
   }
 
   <!-- Botón de envío -->
-  <button type="submit" [disabled]="contactForm.invalid || isSubmitting" class="inline-flex items-center justify-center gap-2 w-full h-11 md:h-12 rounded-lg px-4 md:px-8
+  <button type="submit" [disabled]="contactForm.invalid || isSubmitting || showTurnstile()" class="inline-flex items-center justify-center gap-2 w-full h-11 md:h-12 rounded-lg px-4 md:px-8
            bg-primary text-primary-foreground font-semibold text-sm md:text-base
            transition-colors hover:bg-primary/90
            disabled:opacity-60 disabled:cursor-not-allowed
            focus-visible:outline-none focus-visible:ring-2
            focus-visible:ring-primary/70 focus-visible:ring-offset-2
            focus-visible:ring-offset-background">
+
+    @if (isSubmitting) {
+    <svg class="animate-spin -ml-1 mr-2 h-4 w-4 md:h-5 md:w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+      viewBox="0 0 24 24">
+      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+      <path class="opacity-75" fill="currentColor"
+        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+      </path>
+    </svg>
+    <span>{{ 'contact.form.sending' | t }}</span>
+    } @else {
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 md:h-5 md:w-5">
       <path
@@ -107,14 +109,9 @@
       </path>
       <path d="m21.854 2.147-10.94 10.939"></path>
     </svg>
+    <span>{{ 'contact.form.submit' | t }}</span>
+    }
 
-    <span>
-      @if (isSubmitting) {
-      {{ 'contact.form.sending' | t }}
-      } @else {
-      {{ 'contact.form.submit' | t }}
-      }
-    </span>
   </button>
 
   <!-- Mensajes de estado -->
