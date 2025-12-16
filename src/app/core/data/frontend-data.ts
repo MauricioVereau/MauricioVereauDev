@@ -23,7 +23,7 @@ export const FRONTEND: FrontendProject[] = [
     description: 'projects.project3.desc',
     imageUrl: 'https://api.microlink.io/?url=https://bienesraices-mauriciovereau.netlify.app/&screenshot=true&meta=false&embed=screenshot.url',
     tech: ['Html, css', 'JavaScript', 'Netlify'],
-    projectUrl: 'https://bienesraices-mauriciovereau.netlify.app/"',
+    projectUrl: 'https://bienesraices-mauriciovereau.netlify.app/',
     repoUrl: '#',
   }
 ];
