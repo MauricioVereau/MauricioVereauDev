@@ -28,6 +28,7 @@
   "projects.project3.desc": "Sitio web en HTML, CSS y JavaScript para una empresa de bienes raíces.",
   "projects.project4.desc": "API de e-commerce desarrollada en .NET 8, Docker y Sql Server.",
   "projects.project5.desc": "Aplicación backend con arquitectura limpia en .NET 8 y Docker.",
+  "projects.project6.desc": "Api REST para gestionar productos de Starbucks, desarrollada con .NET 9 y arquitectura limpia.",
 
   "cert.pretitle": "Credenciales Verificadas",
   "cert.title": "Certificaciones",
