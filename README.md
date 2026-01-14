@@ -1,59 +1,64 @@
-# MauricioVereau
+🚀 Mauricio Vereau — Portafolio Profesional
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.9.
+Portafolio web desarrollado con Angular 20, diseñado para presentar mi trayectoria, experiencia y proyectos como Desarrollador de Software Fullstack.
 
-## Development server
+Este sitio no es solo una vitrina bonita: es una aplicación moderna, optimizada y pensada con enfoque real en arquitectura, rendimiento y experiencia de usuario. Nada de “hola mundo” con esteroides.
 
-To start a local development server, run:
+🧠 Sobre mí
 
-```bash
-ng serve
-```
+Soy Desarrollador de Software Fullstack, con experiencia en:
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Desarrollo frontend moderno con Angular
 
-## Code scaffolding
+Backend con .NET / C#
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Arquitectura en capas y Clean Architecture
 
-```bash
-ng generate component component-name
-```
+Consumo de APIs y manejo de estados
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Enfoque en código mantenible, escalable y UX/UI
 
-```bash
-ng generate --help
-```
+Este portafolio resume mi evolución profesional, proyectos reales y las tecnologías con las que trabajo día a día.
 
-## Building
+🛠️ Tecnologías principales
 
-To build the project run:
+Angular 20
 
-```bash
-ng build
-```
+TypeScript
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+HTML5 / CSS3
 
-## Running unit tests
+Arquitectura modular
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Buenas prácticas de frontend
 
-```bash
-ng test
-```
+Responsive Design
 
-## Running end-to-end tests
+Optimización de rendimiento
 
-For end-to-end (e2e) testing, run:
+(Sí, también pienso en SEO, accesibilidad y performance… aunque no se vean a simple vista)
 
-```bash
-ng e2e
-```
+🎯 Objetivo del proyecto
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Este portafolio tiene como objetivo:
 
-## Additional Resources
+Mostrar mi perfil profesional real
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Presentar proyectos y experiencia técnica
+
+Demostrar buenas prácticas en Angular moderno
+
+Servir como base escalable para futuras mejoras
+
+En resumen: código limpio, diseño sobrio y cero humo.
+
+🌐 Despliegue
+
+El proyecto está preparado para despliegue en plataformas modernas (Cloudflare Pages, Vercel, Netlify, etc.).
+
+📎 Autor
+
+Mauricio Vereau
+Desarrollador de Software Fullstack
+
+“Primero que funcione, luego que sea bonito… y finalmente que sea mantenible.”
