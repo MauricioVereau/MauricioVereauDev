@@ -22,8 +22,8 @@
             "styles": [
               "node_modules/remixicon/fonts/remixicon.css",
               "src/styles.css"
-            ],
-            // ...existing code...
+            ]
+
           },
           "configurations": {
             "production": {
