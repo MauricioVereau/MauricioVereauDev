@@ -1,8 +1,9 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZonelessChangeDetection } from '@angular/core';
+import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZonelessChangeDetection, importProvidersFrom } from '@angular/core';
 import { provideRouter, withInMemoryScrolling } from '@angular/router';
-
+import { ServiceWorkerModule } from '@angular/service-worker';
 import { routes } from './app.routes';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { isDevMode } from '@angular/core';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -13,8 +14,13 @@ export const appConfig: ApplicationConfig = {
         scrollPositionRestoration: 'top',
         anchorScrolling: 'enabled'
       })
-
     ),
-    provideHttpClient(withFetch())
+    provideHttpClient(withFetch()),
+    importProvidersFrom(
+      ServiceWorkerModule.register('ngsw-worker.js', {
+        enabled: !isDevMode(),
+        registrationStrategy: 'registerWhenStable:3000'
+      })
+    )
   ]
 };

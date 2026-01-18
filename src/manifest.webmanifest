@@ -1,0 +1,21 @@
+{
+  "name": "Mauricio Vereau",
+  "short_name": "MV Portafolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#2dd4bf",
+  "description": "Portafolio de Mauricio Vereau, desarrollador web fullstack.",
+  "icons": [
+    {
+      "src": "assets/img/mv-dev.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/mv-dev.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

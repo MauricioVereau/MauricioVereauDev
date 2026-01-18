@@ -1,37 +1,35 @@
 <!doctype html>
-<html lang="en">
-
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <title>MauricioVereau</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description" content="Desarrollador Web">
-  <meta name="keywords"
-    content="Mauricio Vereau, Portafolio, Fullstack Developer, Angular, .NET, SQL Server, Software Developer, Perú">
+  <meta name="keywords" content="Mauricio Vereau, Portafolio, Fullstack Developer, Angular, .NET, SQL Server, Software Developer, Perú">
   <meta name="author" content="Mauricio Vereau">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://mauriciovereau.dev">
   <meta name="language" content="Spanish">
-
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_ES">
   <meta property="og:title" content="Mauricio Vereau | Desarrollador Fullstack">
-  <meta property="og:description"
-    content="Mauricio Vereau, Portafolio, Fullstack Developer, Angular, .NET, SQL Server, Software Developer, Perú">
+  <meta property="og:description" content="Mauricio Vereau, Portafolio, Fullstack Developer, Angular, .NET, SQL Server, Software Developer, Perú">
   <meta property="og:url" content="https://mauriciovereau.dev">
   <meta property="og:site_name" content="Mauricio Vereau">
   <meta property="og:image" content="assets/img/mv-dev.png">
   <link rel="icon" type="image/x-icon" href="assets/img/mv-dev.png">
+  <!-- Preconexión y precarga de recursos críticos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="assets/img/mv-dev.png">
+  <!-- Manifest para PWA -->
+  <link rel="manifest" href="/manifest.webmanifest">
 </head>
-
 <body>
   <app-root></app-root>
-
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module" defer></script>
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" defer></script>
 </body>
-
 </html>

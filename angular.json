@@ -16,12 +16,15 @@
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "styles": [
-              "node_modules/remixicon/fonts/remixicon.css", 
+              "node_modules/remixicon/fonts/remixicon.css",
               "src/styles.css"
-            ]
+            ],
+            "serviceWorker": true,
+            "ngswConfigPath": "src/ngsw-config.json"
           },
           "configurations": {
             "production": {

@@ -4,7 +4,7 @@
              transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 hover:scale-[1.02]">
     <div class="aspect-video overflow-hidden relative">
       <img [src]="project.imageUrl" [alt]="project.title"
-        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
       <div class="absolute inset-0 bg-linear-to-t from-card/80 via-card/40 to-transparent"></div>
     </div>
 

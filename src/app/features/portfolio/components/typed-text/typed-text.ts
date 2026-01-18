@@ -13,11 +13,9 @@ export class TypedText implements OnInit {
   texts = signal<string[]>([
     'Software Developer',
     'Angular .NET  Docker  Azure',
-    'Clean Code and Software Architecture',
-    'Continuous Learning and Improvement',
+    'Clean Code & Clean Architecture',
     'Passionate about Technology',
   ]);
-
 
   typedText = signal('');
   currentTextIndex = signal(0);
