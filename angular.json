@@ -23,11 +23,11 @@
               "node_modules/remixicon/fonts/remixicon.css",
               "src/styles.css"
             ],
-            "serviceWorker": true,
-            "ngswConfigPath": "src/ngsw-config.json"
+            // ...existing code...
           },
           "configurations": {
             "production": {
+              "serviceWorker": true,
               "budgets": [
                 {
                   "type": "initial",
