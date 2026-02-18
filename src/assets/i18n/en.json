@@ -25,7 +25,7 @@
   "projects.subtitle": "A selection of my recent works",
   "projects.project1.desc": "Website redesign for Hoteles Italia, focused on UX and performance.",
   "projects.project2.desc": "Angular application that consumes the RestCountries API to list and search countries.",
-  "projects.project3.desc": "HTML, CSS, and JavaScript website for a real estate company.",
+  "projects.project3.desc": "Kamex Trucking website developed to improve their online presence and attract customers.",
   "projects.project4.desc": "E-commerce API built with .NET 8, Docker and Sql Server.",
   "projects.project5.desc": "Backend application using Clean Architecture with .NET 8 and Docker.",
   "projects.project6.desc": "REST API for managing Starbucks products, developed with .NET 9 and Clean Architecture.",
