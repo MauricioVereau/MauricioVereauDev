@@ -20,6 +20,6 @@ export const BACKEND: BackendProject[] = [
     description: 'projects.project6.desc',
     tech: ['.Net', 'Clean Architecture', 'Azure'],
     projectUrl: 'https://appdev-app-dev-we-starbucks-api.azurewebsites.net/swagger/index.html',
-    repoUrl: '',
+    repoUrl: 'https://github.com/MauricioVereau/StarbucksApi',
   },
 ];
